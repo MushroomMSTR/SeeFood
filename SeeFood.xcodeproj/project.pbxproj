@@ -60,14 +60,30 @@
 			children = (
 				749A35112A23985A00C9FAD6 /* AppDelegate.swift */,
 				749A35132A23985A00C9FAD6 /* SceneDelegate.swift */,
-				749A35152A23985A00C9FAD6 /* ViewController.swift */,
-				749A35172A23985A00C9FAD6 /* Main.storyboard */,
+				749A35292A23DE2A00C9FAD6 /* View */,
+				749A352A2A23DE3200C9FAD6 /* Controller */,
 				749A351A2A23985B00C9FAD6 /* Assets.xcassets */,
 				749A351C2A23985B00C9FAD6 /* LaunchScreen.storyboard */,
 				749A35272A23DAB300C9FAD6 /* Inceptionv3.mlpackage */,
 				749A351F2A23985B00C9FAD6 /* Info.plist */,
 			);
 			path = SeeFood;
+			sourceTree = "<group>";
+		};
+		749A35292A23DE2A00C9FAD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				749A35172A23985A00C9FAD6 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		749A352A2A23DE3200C9FAD6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				749A35152A23985A00C9FAD6 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
