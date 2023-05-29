@@ -38,7 +38,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ImageView" destination="0Sd-YJ-dhw" id="5nY-Ds-dcW"/>
+                        <outlet property="imageView" destination="0Sd-YJ-dhw" id="5nY-Ds-dcW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
