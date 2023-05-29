@@ -48,9 +48,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 			
 			if let firstResult = results.first {
 				if firstResult.identifier.contains("hotdog") {
-					self.navigationController?.title = "Hotdog"
+					self.navigationItem.title = "Hotdog"
 				} else {
-					self.navigationController?.title = "Not Hotdog"
+					self.navigationItem.title = "Not Hotdog"
 				}
 			}
 		}
