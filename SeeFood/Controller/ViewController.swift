@@ -25,9 +25,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 		if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
 			imageView.image = userPickedImage
+			
+			guard let ciimage = CIImage(image: userPickedImage) else {
+				fatalError("Couldn't convert to CIImage")
+			}
+			
+			detect(image: ciimage)
 		}
 		
 		picker.dismiss(animated: true, completion: nil)
+	}
+	
+	func detect(image: CIImage) {
+		guard let model = try? VNCoreMLModel(for: MLModel(contentsOf: Inceptionv3.urlOfModelInThisBundle)) else {
+			fatalError("Loading CoreML Model failed")
+		}
+		
+		let request = VNCoreMLRequest(model: model) { request, error in
+			guard let results = request.results as? [VNClassificationObservation] else {
+				fatalError("Model failed to process image")
+			}
+			
+			print(results)
+		}
+		
+		let handler = VNImageRequestHandler(ciImage: image)
+		
+		do {
+			try handler.perform([request])
+		}
+		catch {
+			print(error)
+		}
+		
 	}
 	
 	@IBAction func galleryViewTapped(_ sender: UIBarButtonItem) {
